@@ -43,8 +43,12 @@ Route::get('posts/{post}', function ($slug) {
 
     // $post = cache()->remember("posts.{$slug}", 1200, fn() => file_get_contents($path)); 
 
-    // inline
+    // inline        
+    $post = Post::findOrFail($slug);
+
     return view('post', [
-        'post' => Post::find($slug),
+        'post' => $post,
     ]);
-})->where('post', '[A-z_\-]+');
+});
+// handle slug ngasal
+//->where('post', '[A-z_\-]+');
