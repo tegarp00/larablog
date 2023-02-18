@@ -18,20 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    
-    // $document =  YamlFrontMatter::parseFile(
-    //     resource_path('posts/my-fourth-post.html')
-    // );
-
-    
-    // \Illuminate\Support\Facades\DB::listen(function($query) {
-    //     logger($query->sql, $query->bindings);
-    // });
-
     return view('posts', [
         'posts' => Post::latest()->get(),
+        'categories' => Category::all(),
     ]);
-});
+})->name('home');
 
 Route::get('posts/{post}', function (Post $post) {
 
@@ -43,11 +34,14 @@ Route::get('posts/{post}', function (Post $post) {
 Route::get('categories/{category:slug}', function (Category $category) {
     return view('posts', [
         'posts' => $category->posts,
+        'currentCategory' => $category,
+        'categories' => Category::all(),
     ]);
 });
 
 Route::get('authors/{author:username}', function (User $author) {
     return view('posts', [
         'posts' => $author->posts,
+        'categories' => Category::all(),
     ]);
 });
