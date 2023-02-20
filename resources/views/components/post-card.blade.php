@@ -13,8 +13,10 @@
 
                 <div class="mt-4">
                     <h1 class="text-3xl">
-                        This is a big title and it will look great on two or even three lines. Wooohoo!
-                    </h1>
+                        <a href="/post/{{$post->slug}}">
+                            {{$post->title}}
+                        </a>
+                    </h1> 
 
                     <span class="mt-2 block text-gray-400 text-xs">
                         Published <time>1 day ago</time>
@@ -23,15 +25,7 @@
             </header>
 
             <div class="text-sm mt-4">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-
-                <p class="mt-4">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
+                {!! $post->excerpt !!}
             </div>
 
             <footer class="flex justify-between items-center mt-8">

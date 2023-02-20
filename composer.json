@@ -15,6 +15,7 @@
         "spatie/yaml-front-matter": "^2.0"
     },
     "require-dev": {
+        "bangnokia/laravel-serve-livereload": "^1.1",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
