@@ -13,7 +13,7 @@
 
                 <div class="mt-4">
                     <h1 class="text-3xl">
-                        <a href="/post/{{$post->slug}}">
+                        <a href="/posts/{{$post->slug}}">
                             {{$post->title}}
                         </a>
                     </h1> 
@@ -32,8 +32,8 @@
                 <div class="flex items-center text-sm">
                     <img src="./images/lary-avatar.svg" alt="Lary avatar">
                     <div class="ml-3">
-                        <h5 class="font-bold">Lary Laracore</h5>
-                        <h6>Mascot at Laracasts</h6>
+                        <h5 class="font-bold">
+                            <a href="/?author={{ $post->author->username }}"> {{ $post->author->name }}</a></h5>
                     </div>
                 </div>
 
